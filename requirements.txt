@@ -2,4 +2,3 @@ streamlit
 openai
 requests
 Image
-logging
