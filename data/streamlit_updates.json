@@ -1,0 +1,156 @@
+{
+    "Highlights": {
+        "Version 1.28": {
+            "Description": "Streamlit 1.28 is here!",
+            "Documentation": "Check out the release notes at: https://docs.streamlit.io/library/changelog#version-1280."
+        },
+        "TestingFramework": {
+            "Description": "Introducing a new testing framework for Streamlit apps!",
+            "Documentation": "Check out our documentation to learn how to build automated tests for your apps at: https://docs.streamlit.io/library/api-reference/app-testing"
+        },
+        "ConnectionManagement": {
+            "Description": "Announcing the general availability of st.connection, a command to conveniently manage connections in Streamlit apps.",
+            "Documentation": "Check out the docs to learn more at: https://docs.streamlit.io/library/api-reference/connections#built-in-connections."
+        },
+        "SnowflakeConnection": {
+            "Description": "SnowparkConnection has been upgraded to the new and improved SnowflakeConnection — the same, great functionality plus more!",
+            "Documentation": "Check out our built-in connections at: https://docs.streamlit.io/library/api-reference/connections/st.connections.snowflakeconnection"
+        },
+        "DataEditorUI": {
+            "Description": "st.dataframe and st.data_editor have a new toolbar!",
+            "Documentation": "Users can search and download data in addition to enjoying improved UI for row additions and deletions. See our updated guide on Dataframes at: https://docs.streamlit.io/library/advanced-features/dataframes."
+        }
+    },
+    "NotableChanges": {
+        "SpinnerOverlay": {
+            "Description": "When using a spinner with cached functions, the spinner will be overlaid instead of pushing content down.",
+            "Issue": "#7488"
+        },
+        "DatetimeEditing": {
+            "Description": "st.data_editor now supports datetime index editing.",
+            "Issue": "#7483"
+        },
+        "DecimalSupport": {
+            "Description": "Improved support for decimal.Decimal in st.dataframe and st.data_editor.",
+            "Issue": "#7475"
+        },
+        "GlobalHashlibKwargs": {
+            "Description": "Global kwargs were added for hashlib.",
+            "Issues": ["#7527", "#7526"]
+        },
+        "ClipboardWriting": {
+            "Description": "st.components.v1.iframe now permits writing to clipboard.",
+            "Issue": "#7487"
+        },
+        "SafeSessionState": {
+            "Description": "SafeSessionState disconnect was replaced with script runner yield points for improved efficiency and clarity.",
+            "Issue": "#7373"
+        },
+        "LangchainCallbackHandler": {
+            "Description": "The Langchain callback handler will show the full input string inside the body of a st.status when the input string is too long to show as a label.",
+            "Issue": "#7478"
+        },
+        "GraphvizChartLayout": {
+            "Description": "st.graphviz_chart now supports using different Graphviz layout engines.",
+            "Issues": ["#7505", "#4089"]
+        },
+        "VisualTweaks": {
+            "Description": "Assorted visual tweaks.",
+            "Issues": ["#7486", "#7592"]
+        },
+        "PlotlyUpgrade": {
+            "Description": "plotly.js was upgraded to version 2.26.1.",
+            "Issues": ["#7449", "#7476", "#7045"]
+        },
+        "DataFrameSerialization": {
+            "Description": "Legacy serialization for DataFrames was removed. All DataFrames will be serialized by Apache Arrow.",
+            "Issue": "#7429"
+        },
+        "PillowCompatibility": {
+            "Description": "Compatibility for Pillow 10.x was added.",
+            "Issue": "#7442"
+        },
+        "MigratedEndpoint": {
+            "Description": "Migrated _stcore/allowed-message-origins endpoint to _stcore/host-config.",
+            "Issue": "#7342"
+        },
+        "PostParentMessage": {
+            "Description": "Added post_parent_message platform command to send custom messages from a Streamlit app to its parent window.",
+            "Issue": "#7522"
+        }
+    },
+    "OtherChanges": {
+        "StringDtypeHandling": {
+            "Description": "Improved string dtype handling for DataFrames.",
+            "Issue": "#7479"
+        },
+        "SafeHTMLWrite": {
+            "Description": "st.write will avoid using unsafe_allow_html=True if possible.",
+            "Issue": "#7432"
+        },
+        "ExpanderFix": {
+            "Description": "Bug fix: Implementation of st.expander was simplified for improved behavior and consistency.",
+            "Issues": ["#7247", "#2839", "#4111", "#4651", "#5604"]
+        },
+        "MultipageLinkFix": {
+            "Description": "Bug fix: Multipage links in the sidebar are now aligned with other sidebar elements.",
+            "Issue": "#7531"
+        },
+        "ChatInputFix": {
+            "Description": "Bug fix: st.chat_input won't incorrectly prompt for label parameter in IDEs.",
+            "Issue": "#7560"
+        },
+        "ScrollbarFix": {
+            "Description": "Bug fix: Scroll bars correctly overlay st.dataframe and st.data_editor without adding empty space.",
+            "Issues": ["#7090", "#6888"]
+        },
+        "ChatMessageFix": {
+            "Description": "Bug fix: st.chat_message behaves correctly with the removal of AutoSizer.",
+            "Issues": ["#7504", "#7473"]
+        },
+        "AnchorLinkFix": {
+            "Description": "Bug fix: Anchor links are reliably produced for non-English headers.",
+            "Issues": ["#7454", "#5291"]
+        },
+        "SnowparkConnectionFix": {
+            "Description": "Bug fix: st.connections.SnowparkConnection more accurately detects when it’s running within Streamlit in Snowflake.",
+            "Issue": "#7502"
+        },
+        "PandasStylerWarningFix": {
+            "Description": "Bug fix: A user-friendly warning is shown when exceeding the size limitations of a pandas Styler object.",
+            "Issues": ["#7497", "#5953"]
+        },
+        "DataEditorColumnNameFix": {
+            "Description": "Bug fix: st.data_editor automatically converts non-string column names to strings.",
+            "Issues": ["#7485", "#6950"]
+        },
+        "DataEditorIndexFix": {
+            "Description": "Bug fix: st.data_editor correctly identifies non-range indices as a required column.",
+            "Issues": ["#7481", "#6995"]
+        },
+        "FileUploaderFix": {
+            "Description": "Bug fix: st.file_uploader displays compound file extensions like csv.gz correctly.",
+            "Issue": "#7362"
+        },
+        "ColumnConfigurationFix": {
+            "Description": "Bug fix: Column Configuration no longer uses deprecated type checks.",
+            "Issues": ["#7496", "#7477", "#7550"]
+        },
+        "ToolbarItemFix": {
+            "Description": "Bug fix: Additional toolbar items no longer stack vertically.",
+            "Issues": ["#7470", "#7471"]
+        },
+        "ColumnConfigurationMypyFix": {
+            "Description": "Bug fix: Column Configuration no longer causes a type warning in Mypy.",
+            "Issue": "#7457"
+        },
+        "BokehSliderFix": {
+            "Description": "Bug fix: Bokeh Sliders no longer cause JavaScript errors.",
+            "Issues": ["#7441", "#7171"]
+        },
+        "CachingFix": {
+            "Description": "Bug fix: Caching now recognizes DataFrames with the same values but different column names as different.",
+            "Issues": ["#7331", "#7086"]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+streamlit
+openai
+langchain.adapters
+lc_openai
+requests
+base64
+Image
+ImageEnhance
+logging
