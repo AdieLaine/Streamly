@@ -1,6 +1,5 @@
 streamlit
 openai
-lc_openai
 requests
 base64
 Image
