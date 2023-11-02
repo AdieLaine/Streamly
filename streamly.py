@@ -181,7 +181,6 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
         assistant_reply = ""
 
         if use_langchain:
-            logging.info("Mode: LangChain wrapper")
             # LangChain OpenAI wrapper call
             lc_result = lc_openai.ChatCompletion.create(
                 messages=st.session_state.conversation_history,
@@ -189,7 +188,6 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
                 temperature=0
             )
             assistant_reply = lc_result["choices"][0]["message"]["content"]
-            logging.info(f"LangChain API Call Result: {lc_result}")
 
         else:
             if "latest updates" in user_input:
@@ -200,7 +198,6 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
                         description = info.get("Description", "No description available.")
                         assistant_reply += f"- **{version}**: {description}\n"
             else:
-                logging.info("Mode: Direct OpenAI API call")
                 
                 # Direct OpenAI API call
                 response = openai.ChatCompletion.create(
@@ -209,8 +206,6 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
                 )
                 
                 assistant_reply = response["choices"][0]["message"]["content"]
-                
-                logging.info(f"Direct OpenAI API Call Result: {response}")
 
             # Append assistant's reply to the conversation history
             st.session_state.conversation_history.append({"role": "assistant", "content": assistant_reply})
