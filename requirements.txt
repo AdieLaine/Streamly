@@ -1,7 +1,6 @@
 streamlit
 openai
 requests
-base64
 Image
 ImageEnhance
 logging
