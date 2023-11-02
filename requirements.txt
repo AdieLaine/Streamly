@@ -2,3 +2,4 @@ streamlit
 openai
 requests
 Image
+langchain
