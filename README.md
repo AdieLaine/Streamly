@@ -1,7 +1,7 @@
-<h1><span style="color: crimson;">Streamly</span> - Streamlit Assistant <img src="slogo.png" alt="Streamlit logo" width="30" style="border-radius: 25px;"/></h1>
+<h1><span style="color: crimson;">Streamly</span> - Streamlit Assistant <img src="imgs/slogo.png" alt="Streamlit logo" width="30" style="border-radius: 25px;"/></h1>
 
 <p align="center">
-  <img src="streamly_readme.png" alt="Streamly image" width="300" style="border-radius: 45px;"/>
+  <img src="imgs/streamly_readme.png" alt="Streamly image" width="300" style="border-radius: 45px;"/>
 </p>
 
 Streamly is an AI Assistant that was designed to supercharge the development experience with the Streamlit framework. It acts as an AI-infused sidekick, offering on-the-fly assistance 🚀, code snippets ✂️, and a deep dive into Streamlit's rich api code. 🧪
