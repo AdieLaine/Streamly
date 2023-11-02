@@ -293,7 +293,7 @@ def main():
     st.sidebar.markdown("---")
     
     # Sidebar for Mode Selection
-    mode = st.sidebar.radio("Select Mode:", options=["Code Examples", "Chat with Streamly"], index=1)
+    mode = st.sidebar.radio("Select Mode:", options=["Latest Updates", "Chat with Streamly"], index=1)
     use_langchain = st.sidebar.checkbox("Use LangChain OpenAI Adapter 🦜️🔗 ", value=False)
     st.sidebar.markdown("---")
     # Toggle checkbox in the sidebar for basic interactions
