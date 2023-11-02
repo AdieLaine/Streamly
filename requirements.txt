@@ -2,5 +2,4 @@ streamlit
 openai
 requests
 Image
-ImageEnhance
 logging
