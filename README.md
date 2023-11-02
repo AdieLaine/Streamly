@@ -27,3 +27,67 @@ With Streamlit's caching mechanisms under the hood for performance optimization,
 Streamly embraces the future with open arms, designed to be extensible and modular. The integration of LangChain adds for a fuller and seamless conversational experience, making it not just an assistant but a developer's companion 🤝.
 
 In the vibrant world of Streamlit development, Streamly shines as a beacon of innovation and practicality. It's not just an AI assistant; it's a testament to the harmonious blend of human creativity and artificial intelligence, all wrapped up in a user-friendly package 🎁. Whether you're a novice coder or a seasoned developer, Streamly is here to light up your coding journey with a spark of AI brilliance ✨.
+
+## Setup Instructions
+
+To get Streamly up and running on your local machine, follow these steps:
+
+### Prerequisites
+
+- Python 3.10 or higher
+- Pip package manager
+
+### API Keys
+
+Use secrets.toml an add your OpenAI API key or set your enviroment variable OPENAI_API_KEY to your API key.
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/AdieLaine/Streamly.git
+cd streamly
+```
+
+2. Create and activate a virtual environment (optional but recommended):
+```bash
+python3 -m venv venv
+source venv/bin/activate # On Windows use venv\Scripts\activate
+```
+
+3. Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the Application
+
+To run Streamly, execute the following command:
+
+```bash
+streamlit run streamly.py
+```
+
+This will start the Streamlit server, and you should see output indicating the local URL where the app is being served, typically `http://localhost:8501`.
+
+## Using Streamly
+
+After launching Streamly, you can interact with it in the following ways:
+
+- **Chat Interface**: Simply type your Streamlit-related queries into the chat interface and hit send. Streamly will respond with insights, code snippets, or guidance based on your questions.
+
+- **Code Examples**: Ask for code examples by typing queries such as "How do I create a sidebar in Streamlit?" and Streamly will provide you with the relevant code.
+
+- **Latest Updates**: To get the latest updates from Streamlit, type "What's new with Streamlit?" or similar questions.
+
+Remember to check the sidebar for additional features and settings that you can customize according to your needs.
+
+## Contributions
+
+If you'd like to contribute to Streamly, please fork the repository and create a pull request with your features or fixes.
+
+## License
+
+Streamly is released under the [MIT License](LICENSE). See the `LICENSE` file for more details.
