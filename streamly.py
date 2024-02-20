@@ -2,7 +2,6 @@ import logging
 import streamlit as st
 from openai import OpenAI
 
-client = OpenAI(api_key=api_key)
 from langchain.adapters import openai as lc_openai
 from PIL import Image, ImageEnhance
 import time
