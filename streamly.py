@@ -10,7 +10,6 @@ import requests
 import base64
 from openai import OpenAI
 
-client = OpenAI(api_key=api_key)
 from openai import OpenAI
 client = OpenAI()
 
