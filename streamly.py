@@ -221,7 +221,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
         logging.error(f"Error occurred: {e}")
         error_message = f"OpenAI Error: {str(e)}"
         st.error(error_message)
-        st.session_state.history.append({"role": "assistant", "content": error_message})
+        #st.session_state.history.append({"role": "assistant", "content": error_message})
 
 def main():
     """
