@@ -1,6 +1,6 @@
 import logging
 import streamlit as st
-from langchain.adapters import OpenAI as lc_openai
+from langchain.adapters import openai as lc_openai
 from PIL import Image, ImageEnhance
 import time
 import json
