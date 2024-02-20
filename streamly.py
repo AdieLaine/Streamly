@@ -1,13 +1,12 @@
 import logging
 import streamlit as st
-#from langchain.adapters import openai as lc_openai
+import openai
+from langchain.adapters import openai as lc_openai
 from PIL import Image, ImageEnhance
 import time
 import json
 import requests
 import base64
-from openai import OpenAI
-client = OpenAI()
 
 logging.basicConfig(level=logging.INFO)
 
@@ -139,7 +138,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
     user_input = chat_input.strip().lower()
 
     # Initialize the OpenAI API
-    OpenAI.api_key = api_key
+    openai.api_key = api_key
     model_engine = "gpt-3.5-turbo"
 
     # Initialize the conversation history with system and assistant messages
@@ -201,7 +200,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
             else:
                 
                 # Direct OpenAI API call
-                response = client.chat.completions.create(
+                response = openai.ChatCompletion.create(
                     model=model_engine,
                     messages=st.session_state.conversation_history
                 )
@@ -216,10 +215,11 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
             st.session_state.history.append({"role": "user", "content": user_input})
             st.session_state.history.append({"role": "assistant", "content": assistant_reply})
 
-    except openai.APIError as e:  # Correct usage of the exception handling
+    except openai.error.OpenAIError as e:
         logging.error(f"Error occurred: {e}")
         error_message = f"OpenAI Error: {str(e)}"
         st.error(error_message)
+        st.session_state.history.append({"role": "assistant", "content": error_message})
 
 def main():
     """
