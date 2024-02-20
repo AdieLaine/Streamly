@@ -240,10 +240,6 @@ def main():
         updates = latest_updates.get("Highlights", {})
         if isinstance(updates, dict):  # Check if updates is a dictionary
             initial_bot_message = "### Latest Streamlit Highlights:\n"
-            for key, value in updates.items():
-                description = value.get("Description", "No description available.")
-                documentation = value.get("Documentation", "No documentation available.")
-                initial_bot_message += f"- **{key}**: {description}\n  - **Documentation**: {documentation}\n"
             st.session_state.history.append({"role": "assistant", "content": initial_bot_message})
             st.session_state.conversation_history = [
                 {"role": "system", "content": "You are Streamly, a specialized AI assistant trained in Streamlit and the current update and version 1.28."},
