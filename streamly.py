@@ -1,6 +1,5 @@
 import logging
 import streamlit as st
-from streamlit_chat import message
 from streamlit.components.v1 import html
 
 from langchain.adapters import openai as lc_openai
