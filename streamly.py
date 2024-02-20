@@ -1,6 +1,7 @@
 import logging
 import streamlit as st
-import openai
+from openai import OpenAI
+client = OpenAI()
 from langchain.adapters import openai as lc_openai
 from PIL import Image, ImageEnhance
 import time
@@ -200,7 +201,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
             else:
                 
                 # Direct OpenAI API call
-                response = openai.ChatCompletion.create(
+                response = client.chat.completions.create(
                     model=model_engine,
                     messages=st.session_state.conversation_history
                 )
