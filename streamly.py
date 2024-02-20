@@ -143,7 +143,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
     user_input = chat_input.strip().lower()
 
     # Initialize the OpenAI API
-    model_engine = "gpt-3.5-turbo"
+    model_engine = "gpt-4"
 
     # Initialize the conversation history with system and assistant messages
     if 'conversation_history' not in st.session_state:
@@ -170,7 +170,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
         
         # Initialize conversation_history
         st.session_state.conversation_history = [
-            {"role": "system", "content": "You are Streamly, a specialized AI assistant trained in Streamlit and the current update and version 1.28."},
+            {"role": "system", "content": "You are Streamly, a specialized AI assistant trained in Streamlit."},
             {"role": "system", "content": "Refer to conversation history to provide context to your reponse."},
             {"role": "system", "content": "Use the streamlit_updates.json local file to look up the latest Streamlit feature updates."},
             {"role": "assistant", "content": assistant_message}
