@@ -239,7 +239,7 @@ def main():
         initial_bot_message = "Hello! How can I assist you with Streamlit today? Here are some of the latest highlights:\n"
         updates = latest_updates.get("Highlights", {})
         if isinstance(updates, dict):  # Check if updates is a dictionary
-            initial_bot_message = "### Latest Streamlit Highlights:\n"
+            initial_bot_message = "# Ask me about Streamlit."
             st.session_state.history.append({"role": "assistant", "content": initial_bot_message})
             st.session_state.conversation_history = [
                 {"role": "system", "content": "You are Streamly, a specialized AI assistant trained to assist with the logic and programming using Streamlit."},
