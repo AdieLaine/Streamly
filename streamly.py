@@ -1,13 +1,17 @@
 import logging
 import streamlit as st
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=api_key)
 from langchain.adapters import openai as lc_openai
 from PIL import Image, ImageEnhance
 import time
 import json
 import requests
 import base64
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=api_key)
 from openai import OpenAI
 client = OpenAI()
 
@@ -141,7 +145,6 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
     user_input = chat_input.strip().lower()
 
     # Initialize the OpenAI API
-    openai.api_key = api_key
     model_engine = "gpt-3.5-turbo"
 
     # Initialize the conversation history with system and assistant messages
@@ -203,12 +206,10 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
             else:
                 
                 # Direct OpenAI API call
-                response = openai.ChatCompletion.create(
-                    model=model_engine,
-                    messages=st.session_state.conversation_history
-                )
+                response = client.chat.completions.create(model=model_engine,
+                messages=st.session_state.conversation_history)
                 
-                assistant_reply = response["choices"][0]["message"]["content"]
+                assistant_reply = response.choices[0].message.content
 
             # Append assistant's reply to the conversation history
             st.session_state.conversation_history.append({"role": "assistant", "content": assistant_reply})
