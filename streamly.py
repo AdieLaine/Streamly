@@ -1,6 +1,6 @@
 import logging
 import streamlit as st
-from openai import OpenAI
+from streamlit.components.v1 import html
 
 from langchain.adapters import openai as lc_openai
 from PIL import Image, ImageEnhance
@@ -8,7 +8,7 @@ import time
 import json
 import requests
 import base64
-from openai import OpenAI
+
 
 from openai import OpenAI
 client = OpenAI()
