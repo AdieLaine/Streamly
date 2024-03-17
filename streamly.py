@@ -107,19 +107,19 @@ def get_streamlit_api_code_version():
     try:
         response = requests.get(API_DOCS_URL)
         if response.status_code == 200:
-            return "1.28.0"
+            return "1.32.0"
     except requests.exceptions.RequestException as e:
         print("Error connecting to the Streamlit API documentation:", str(e))
     return None
 
 def display_streamlit_updates():
     """It displays the latest updates of the Streamlit."""
-    with st.expander("Streamlit 1.28 Announcement", expanded=False):
+    with st.expander("Streamlit 1.32 Announcement", expanded=False):
         image_path = "imgs/streamlit128.png"
         enhance = st.checkbox("Enhance Image?", False)
         img = load_and_enhance_image(image_path, enhance)
-        st.image(img, caption="Streamlit 1.28 Announcement", use_column_width="auto", clamp=True, channels="RGB", output_format="PNG")
-        st.markdown("For more details on this version, check out the [Streamlit Forum post](https://discuss.streamlit.io/t/version-1-28-0/54194).")
+        st.image(img, caption="Streamlit 1.32 Announcement", use_column_width="auto", clamp=True, channels="RGB", output_format="PNG")
+        st.markdown("For more details on this version, check out the [Streamlit Forum post](https://docs.streamlit.io/library/changelog#version-1320).")
 
 def img_to_base64(image_path):
     """Convert image to base64"""
@@ -143,7 +143,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
     user_input = chat_input.strip().lower()
 
     # Initialize the OpenAI API
-    model_engine = "gpt-3.5-turbo"
+    model_engine = "gpt-3.5-turbo-instruct-0914"
 
     # Initialize the conversation history with system and assistant messages
     if 'conversation_history' not in st.session_state:
@@ -152,15 +152,15 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
         highlights = latest_updates.get("Highlights", {})
         
         # Include version info in highlights if available
-        version_info = highlights.get("Version 1.28", {})
+        version_info = highlights.get("Version 1.32", {})
         if version_info:
             description = version_info.get("Description", "No description available.")
-            formatted_message.append(f"- **Version 1.28**: {description}")
+            formatted_message.append(f"- **Version 1.32**: {description}")
 
         for category, updates in latest_updates.items():
             formatted_message.append(f"**{category}**:")
             for sub_key, sub_values in updates.items():
-                if sub_key != "Version 1.28":  # Skip the version info as it's already included
+                if sub_key != "Version 1.32":  # Skip the version info as it's already included
                     description = sub_values.get("Description", "No description available.")
                     documentation = sub_values.get("Documentation", "No documentation available.")
                     formatted_message.append(f"- **{sub_key}**: {description}")
@@ -172,7 +172,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
         st.session_state.conversation_history = [
             {"role": "system", "content": "You are Streamly, a specialized AI assistant trained in Streamlit."},
             {"role": "system", "content": "Refer to conversation history to provide context to your reponse."},
-            {"role": "system", "content": "Use the streamlit_updates.json local file to look up the latest Streamlit feature updates."},
+            {"role": "system", "content": "You are trained up to Streamlit Version 1.32.0."},
             {"role": "assistant", "content": assistant_message}
         ]
 
