@@ -1,8 +1,8 @@
 {
     "Highlights": {
         "Version 1.28": {
-            "Description": "Streamlit 1.28 is here!",
-            "Documentation": "Check out the release notes at: https://docs.streamlit.io/library/changelog#version-1280."
+            "Description": "Streamlit Version 1.32.0 is here!",
+            "Documentation": "Check out the release notes at: https://docs.streamlit.io/library/changelog#version-1320"
         },
         "TestingFramework": {
             "Description": "Introducing a new testing framework for Streamlit apps!",
