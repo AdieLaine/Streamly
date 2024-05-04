@@ -114,12 +114,7 @@ def get_streamlit_api_code_version():
 
 def display_streamlit_updates():
     """It displays the latest updates of the Streamlit."""
-    with st.expander("Streamlit 1.34 Announcement", expanded=False):
-        image_path = "imgs/streamlit128.png"
-        enhance = st.checkbox("Enhance Image?", False)
-        img = load_and_enhance_image(image_path, enhance)
-        st.image(img, caption="Streamlit 1.34 Announcement", use_column_width="auto", clamp=True, channels="RGB", output_format="PNG")
-        st.markdown("For more details on this version, check out the [Streamlit Forum post](https://docs.streamlit.io/library/changelog#version-1320).")
+    with st.expander("Streamlit 1.34 Announcement", expanded=False): st.markdown("For more details on this version, check out the [Streamlit Forum post](https://docs.streamlit.io/library/changelog#version-1320).")
 
 def img_to_base64(image_path):
     """Convert image to base64"""
