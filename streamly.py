@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Streamlit Page Configuration
 st.set_page_config(
-    page_title="Streamly Streamlit Assistant",
+    page_title="Streamly - An Intelligent Streamlit Assistant",
     page_icon="imgs/avatar_streamly.png",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -291,7 +291,7 @@ def main():
     st.sidebar.markdown("---")
     
     # Sidebar for Mode Selection
-    mode = st.sidebar.radio("Select Mode:", options=["Latest Updates", "Chat with Streamly"], index=1)
+    #mode = st.sidebar.radio("Select Mode:", options=["Latest Updates", "Chat with Streamly"], index=1)
     use_langchain = st.sidebar.checkbox("Use LangChain OpenAI Adapter 🦜️🔗 ", value=False)
     st.sidebar.markdown("---")
     # Toggle checkbox in the sidebar for basic interactions
@@ -339,7 +339,7 @@ def main():
         st.stop()
     
     # Handle Chat and Update Modes
-    if mode == "Chat with Streamly":
+    if mode == "Chat with Streamly": # type: ignore
         chat_input = st.chat_input("Ask me about Streamlit updates:")
         if chat_input:
             latest_updates = load_streamlit_updates()
