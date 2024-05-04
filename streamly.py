@@ -114,7 +114,7 @@ def get_streamlit_api_code_version():
 
 def display_streamlit_updates():
     """It displays the latest updates of the Streamlit."""
-    with st.expander("Streamlit 1.34 Announcement", expanded=False): st.markdown("For more details on this version, check out the [Streamlit Forum post](https://docs.streamlit.io/library/changelog#version-1320).")
+    with st.expander("Streamlit 1.34 Announcement", expanded=False): st.markdown("For more details on this version, check out the [Streamlit Forum post](https://docs.streamlit.io/library/changelog#version).")
 
 def img_to_base64(image_path):
     """Convert image to base64"""
