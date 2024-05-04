@@ -138,7 +138,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
     user_input = chat_input.strip().lower()
 
     # Initialize the OpenAI API
-    model_engine = "gpt-3.5-turbo-1106"
+    model_engine = "gpt-3.5-turbo-0125"
 
     # Initialize the conversation history with system and assistant messages
     if 'conversation_history' not in st.session_state:
