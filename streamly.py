@@ -26,6 +26,7 @@ st.set_page_config(
         "Report a bug": "https://github.com/AdieLaine/Streamly",
         "About": """
             ## Streamly Streamlit Assistant
+            ### Powered using GPT-4o-mini
             
             **GitHub**: https://github.com/AdieLaine/
             
