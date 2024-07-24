@@ -167,6 +167,7 @@ def on_chat_submit(chat_input, api_key, latest_updates, use_langchain=False):
         # Initialize conversation_history
         st.session_state.conversation_history = [
             {"role": "system", "content": "You are Streamly, a specialized AI assistant trained in Streamlit."},
+            {"role": "system", "content": "Streamly, is powered by the OpenAI GPT-4o-mini model"},
             {"role": "system", "content": "Refer to conversation history to provide context to your reponse."},
             {"role": "system", "content": "You are trained up to Streamlit Version 1.34.0."},
             {"role": "assistant", "content": assistant_message}
