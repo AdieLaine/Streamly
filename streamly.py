@@ -199,7 +199,9 @@ def on_chat_submit(chat_input, latest_updates):
     Returns:
     - None: Updates the chat history in Streamlit's session state.
     """
-    user_input = chat_input.strip().lower()
+    user_input = chat_input.strip()
+    normalized_input = user_input.lower()
+
 
     if 'conversation_history' not in st.session_state:
         st.session_state.conversation_history = initialize_conversation()
@@ -210,7 +212,7 @@ def on_chat_submit(chat_input, latest_updates):
         model_engine = "gpt-4o-mini"
         assistant_reply = ""
 
-        if "latest updates" in user_input:
+        if "latest updates" in normalized_input:
             assistant_reply = "Here are the latest highlights from Streamlit:\n"
             highlights = latest_updates.get("Highlights", {})
             if highlights:
